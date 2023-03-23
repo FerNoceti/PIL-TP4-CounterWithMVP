@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PIL Mobile Basics</string>
+    <string name="starting_count_value">0</string>
+    <string name="button_increment">Increment</string>
+    <string name="button_decrement">Decrement</string>
+    <string name="button_reset">Reset</string>
+    <string name="hint">Insert a number</string>
+    <string name="autofill_hint">Try with 1</string>
+</resources>
