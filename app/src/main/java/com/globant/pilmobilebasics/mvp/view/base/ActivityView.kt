@@ -1,4 +1,4 @@
-package com.globant.mobilebasics.mvp.view.base
+package com.globant.pilmobilebasics.mvp.view.base
 
 import android.app.Activity
 import java.lang.ref.WeakReference
