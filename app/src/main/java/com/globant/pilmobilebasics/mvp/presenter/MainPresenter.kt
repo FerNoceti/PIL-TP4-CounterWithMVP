@@ -2,7 +2,8 @@ package com.globant.pilmobilebasics.mvp.presenter
 
 import com.globant.pilmobilebasics.mvp.contract.MainContract
 
-class MainPresenter(private val model: MainContract.Model, private val view: MainContract.View) : MainContract.Presenter {
+class MainPresenter(private val model: MainContract.Model, private val view: MainContract.View) :
+    MainContract.Presenter {
 
     init {
         view.onIncrementButtonPressed { onIncrementButtonPressed() }
