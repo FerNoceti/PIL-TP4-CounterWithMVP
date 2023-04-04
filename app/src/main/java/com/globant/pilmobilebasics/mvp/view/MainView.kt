@@ -2,9 +2,9 @@ package com.globant.pilmobilebasics.mvp.view
 
 import android.app.Activity
 import android.widget.Toast
-import com.globant.pilmobilebasics.mvp.view.base.ActivityView
 import com.globant.pilmobilebasics.databinding.ActivityMainBinding
 import com.globant.pilmobilebasics.mvp.contract.MainContract
+import com.globant.pilmobilebasics.mvp.view.base.ActivityView
 import com.globant.pilmobilebasics.util.Constants.MessageInputError
 
 class MainView(activity: Activity) : ActivityView(activity), MainContract.View {

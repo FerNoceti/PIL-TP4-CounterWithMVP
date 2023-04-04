@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:gravity="center"
+        android:maxWidth="@dimen/textView_maxWidth"
         android:text="@string/starting_count_value"
         android:textSize="@dimen/textSize_big"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,60 +40,50 @@
         android:gravity="center"
         android:hint="@string/hint"
         android:inputType="number"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/editText_minHeight"
+        android:textSize="@dimen/editText_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/countLabel" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="0dp">
+    <Button
+        android:id="@+id/decrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/button_marginHorizontal"
+        android:minWidth="@dimen/button_min_width"
+        android:padding="@dimen/button_padding"
+        android:text="@string/button_decrement"
+        android:textSize="@dimen/button_textSize"
+        app:layout_constraintEnd_toStartOf="@+id/resetButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/button_marginHorizontal"
+        android:minWidth="@dimen/button_min_width"
+        android:padding="@dimen/button_padding"
+        android:text="@string/button_reset"
+        android:textSize="@dimen/button_textSize"
+        app:layout_constraintEnd_toStartOf="@+id/incrementButton"
+        app:layout_constraintStart_toEndOf="@+id/decrementButton"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-        <Button
-            android:id="@+id/decrementButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/button_marginHorizontal"
-            android:minWidth="@dimen/button_min_width"
-            android:padding="@dimen/button_padding"
-            android:text="@string/button_decrement"
-            android:textSize="@dimen/button_textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/incrementButton" />
-
-        <Button
-            android:id="@+id/resetButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/button_marginHorizontal"
-            android:minWidth="@dimen/button_min_width"
-            android:padding="@dimen/button_padding"
-            android:text="@string/button_reset"
-            android:textSize="@dimen/button_textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/decrementButton" />
-
-        <Button
-            android:id="@+id/incrementButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/button_marginHorizontal"
-            android:minWidth="@dimen/button_min_width"
-            android:padding="@dimen/button_padding"
-            android:text="@string/button_increment"
-            android:textSize="@dimen/button_textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText" />
-
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/incrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/button_marginHorizontal"
+        android:minWidth="@dimen/button_min_width"
+        android:padding="@dimen/button_padding"
+        android:text="@string/button_increment"
+        android:textSize="@dimen/button_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/resetButton"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
