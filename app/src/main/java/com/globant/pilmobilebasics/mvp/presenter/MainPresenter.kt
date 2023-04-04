@@ -9,21 +9,23 @@ class MainPresenter(private val model: MainContract.Model, private val view: Mai
         view.onIncrementButtonPressed { onIncrementButtonPressed() }
         view.onDecrementButtonPressed { onDecrementButtonPressed() }
         view.onResetButtonPressed { onResetButtonPressed() }
+
+        view.setCount(model.counter.toString())
     }
 
     override fun onIncrementButtonPressed() {
-        if (view.checkNumber()) {
-            model.increment(view.getNumber())
-            view.setCount(model.getCount())
+        if (view.getNumber().isNotEmpty()) {
+            model.increment(view.getNumber().toInt())
+            view.setCount(model.counter.toString())
         } else {
             view.showNumberError()
         }
     }
 
     override fun onDecrementButtonPressed() {
-        if (view.checkNumber()) {
-            model.decrement(view.getNumber())
-            view.setCount(model.getCount())
+        if (view.getNumber().isNotEmpty()) {
+            model.decrement(view.getNumber().toInt())
+            view.setCount(model.counter.toString())
         } else {
             view.showNumberError()
         }
@@ -31,6 +33,7 @@ class MainPresenter(private val model: MainContract.Model, private val view: Mai
 
     override fun onResetButtonPressed() {
         model.reset()
-        view.setCount(model.getCount())
+        view.setCount(model.counter.toString())
+        view.clear()
     }
 }

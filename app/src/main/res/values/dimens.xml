@@ -9,4 +9,5 @@
     <dimen name="textView_maxWidth">400dp</dimen>
     <dimen name="editText_minHeight">60dp</dimen>
     <dimen name="editText_textSize">20sp</dimen>
+    <dimen name="container_margin">18dp</dimen>
 </resources>

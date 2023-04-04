@@ -5,7 +5,6 @@ import android.widget.Toast
 import com.globant.pilmobilebasics.databinding.ActivityMainBinding
 import com.globant.pilmobilebasics.mvp.contract.MainContract
 import com.globant.pilmobilebasics.mvp.view.base.ActivityView
-import com.globant.pilmobilebasics.util.Constants.MessageInputError
 
 class MainView(activity: Activity) : ActivityView(activity), MainContract.View {
 
@@ -19,16 +18,15 @@ class MainView(activity: Activity) : ActivityView(activity), MainContract.View {
         binding.countLabel.text = count
     }
 
-    override fun getNumber(): String {
-        return binding.editText.text.toString()
-    }
-
-    override fun checkNumber(): Boolean {
-        return getNumber().isNotEmpty()
-    }
+    override fun getNumber(): String = binding.editText.text.toString()
 
     override fun showNumberError() {
         Toast.makeText(activity, MessageInputError, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun clear() {
+        binding.editText.text.clear()
+        binding.editText.clearFocus()
     }
 
     override fun onIncrementButtonPressed(onClick: () -> Unit) {
@@ -41,5 +39,9 @@ class MainView(activity: Activity) : ActivityView(activity), MainContract.View {
 
     override fun onResetButtonPressed(onClick: () -> Unit) {
         binding.resetButton.setOnClickListener { onClick() }
+    }
+
+    companion object {
+        private const val MessageInputError = "Please enter a number"
     }
 }

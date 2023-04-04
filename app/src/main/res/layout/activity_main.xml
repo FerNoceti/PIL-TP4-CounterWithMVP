@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    android:layout_margin="@dimen/container_margin">
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +27,6 @@
         android:layout_marginTop="75dp"
         android:gravity="center"
         android:maxWidth="@dimen/textView_maxWidth"
-        android:text="@string/starting_count_value"
         android:textSize="@dimen/textSize_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
